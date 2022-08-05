@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class CustomerService
+    public interface IAccount
     {
-
+        string Email { get; set; }
+        string Password { get; set; }
     }
 }

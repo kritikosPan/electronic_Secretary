@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class User
+    public class User : IAccount
     {
         public int UserId { get; set; }
-        public string Email { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public Calendar MyCalendar { get; set; }
-        public int MyCalendar2 { get; set; }
-       
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }   
