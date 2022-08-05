@@ -13,5 +13,7 @@ namespace Entity
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public Calendar MyCalendar { get; set; }
+        public int MyCalendar2 { get; set; }
+       
     }
 }   
