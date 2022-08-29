@@ -17,7 +17,6 @@ namespace Entity
         [Required(), MaxLength(60), MinLength(2)]
         [Display(Name = "Last Name")]
         public string Lastname { get; set; }
-        public Calendar MyCalendar { get; set; }
         [EmailAddress]
         public string Email { get; set; }
         public string Password { get; set; }
