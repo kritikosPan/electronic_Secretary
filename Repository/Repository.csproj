@@ -52,8 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\IGenericRepository.cs" />
-    <Compile Include="Core\IServiceProvider.cs" />
-    <Compile Include="Core\IUser.cs" />
+    <Compile Include="Core\Repository\IServiceProvider.cs" />
+    <Compile Include="Core\Repository\IUser.cs" />
+    <Compile Include="Persistance\GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +72,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Persistance\" />
+    <Folder Include="Persistance\Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

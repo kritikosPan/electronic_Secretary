@@ -63,6 +63,7 @@
     <Compile Include="Appointment.cs" />
     <Compile Include="Calendar.cs" />
     <Compile Include="IAccount.cs" />
+    <Compile Include="SecretaryEntity.cs" />
     <Compile Include="ServiceCategory.cs" />
     <Compile Include="ServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

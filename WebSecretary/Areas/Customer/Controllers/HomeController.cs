@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace WebSecretary.Areas.Admin.Controllers
+namespace WebSecretary.Areas.Customer.Controllers
 {
-    public class ProviderController : Controller
+    public class HomeController : Controller
     {
-        // GET: Admin/Provider
+        // GET: Customer/Home
         public ActionResult Index()
         {
-            return View("Eimai o provider");
+            return Content("Customer");
         }
     }
 }
