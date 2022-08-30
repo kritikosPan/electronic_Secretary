@@ -52,8 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\IGenericRepository.cs" />
-    <Compile Include="Core\Repository\IServiceProvider.cs" />
-    <Compile Include="Core\Repository\IUser.cs" />
     <Compile Include="Persistance\GenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +70,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Core\Repository\" />
     <Folder Include="Persistance\Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
