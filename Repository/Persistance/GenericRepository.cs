@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Persistance
 {
-    internal class GenericRepository<T> : IGenericRepository<T> where T : SecretaryEntity
+    public class GenericRepository<T> : IGenericRepository<T> where T : SecretaryEntity
     {
         public ApplicationDbContext db;
         public DbSet<T> table;

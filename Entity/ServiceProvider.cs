@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class ServiceProvider : IAccount
+    public class ServiceProvider : SecretaryEntity,IAccount
     {
         public int Id { get; set; }
         [Required(), MaxLength(60), MinLength(2)]
@@ -16,7 +16,9 @@ namespace Entity
         [EmailAddress]
         public string Email { get; set; }
         public string Password { get; set; }
+        public double Rating { get; set; }
         public Calendar Calendar { get; set; }
+       
 
         //Navigation Properties
         public ServiceCategory Category { get; set; }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class User : IAccount
+    public class User : SecretaryEntity,IAccount
     {
         public int UserId { get; set; }
         [Required(), MaxLength(60), MinLength(2)]

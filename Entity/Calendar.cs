@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Calendar
+    public class Calendar: SecretaryEntity
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }
