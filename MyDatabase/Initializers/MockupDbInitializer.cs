@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,30 +25,59 @@ namespace MyDatabase.Initializers
             User u9 = new User() { Firstname = "George", Lastname = "Pasparakis", Email = "paspa1234@gmail.com", Password = "admin1234!" };
             User u10 = new User() { Firstname = "Marianta", Lastname = "Papadopoulou", Email = "dion1234@gmail.com", Password = "admin1234!" };
 
-            ServiceCategory c1 = new ServiceCategory() { Category = "Doctor"};
-            ServiceCategory c2 = new ServiceCategory() { Category = "Bank"};
-            ServiceCategory c3 = new ServiceCategory() { Category = "Public Sector"};
-            ServiceCategory c4 = new ServiceCategory() { Category = "Cosmetic Services"};
+            context.Users.AddOrUpdate(u1, u2, u3, u4, u5, u6, u7, u8, u9, u10);
+            //context.SaveChanges();
 
-            ServiceProvider p1 = new ServiceProvider() { Name = "Tripodakis", Email = "tripo@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c1 };
-            ServiceProvider p2 = new ServiceProvider() { Name = "Eurobank", Email = "eurobank@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c2 };
-            ServiceProvider p3 = new ServiceProvider() { Name = "DOY", Email = "doy@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c3 };
-            ServiceProvider p4 = new ServiceProvider() { Name = "Hair & Nails", Email = "hairnails@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c4 };
+            //ServiceCategory c1 = new ServiceCategory() { Category = "Doctor" };
+            //ServiceCategory c2 = new ServiceCategory() { Category = "Bank" };
+            //ServiceCategory c3 = new ServiceCategory() { Category = "Public Sector" };
+            //ServiceCategory c4 = new ServiceCategory() { Category = "Cosmetic Services" };
 
-            Appointment a1 = new Appointment() { Subject = "wisdom tooth removal", DateofAppointment = new DateTime() { }, User = u1 };
-            Appointment a2 = new Appointment() { Subject = "account registration", DateofAppointment = new DateTime() { } };
-            Appointment a3 = new Appointment() { Subject = "Tax Payment", DateofAppointment = new DateTime() { } };
-            Appointment a4 = new Appointment() { Subject = "haircut", DateofAppointment = new DateTime() { } };
+            //ServiceProvider p1 = new ServiceProvider() { Name = "Tripodakis", Email = "tripo@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c1 };
+            //ServiceProvider p2 = new ServiceProvider() { Name = "Eurobank", Email = "eurobank@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c2 };
+            //ServiceProvider p3 = new ServiceProvider() { Name = "DOY", Email = "doy@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c3 };
+            //ServiceProvider p4 = new ServiceProvider() { Name = "Hair & Nails", Email = "hairnails@gmail.com", Password = "admin1234!", Calendar = new Calendar(), Category = c4 };
+
+            //context.Providers.AddOrUpdate(p1, p2, p3, p4);
+            //context.SaveChanges();
+
+            Calendar calendar = new Calendar() { StartDate = new DateTime(2022, 09, 09), EndDate = new DateTime(2022, 09, 09), User = u10 };
+
+            Appointment a1 = new Appointment() { Subject = "wisdom tooth removal", DateofAppointment =new DateTime(2022, 9, 15)};
+            Appointment a2 = new Appointment() { Subject = "account registration", DateofAppointment = new DateTime(2022, 9, 15)};
+            Appointment a3 = new Appointment() { Subject = "Tax Payment", DateofAppointment = new DateTime(2022, 9, 15)};
+            Appointment a4 = new Appointment() { Subject = "haircut", DateofAppointment = new DateTime(2022, 9, 15)};
+
+            a1.User = u1;
+            a2.User = u2;
+            a3.User = u3;
+            a4.User = u7;
+
+            context.Appointments.AddOrUpdate(a1, a2, a3, a4);
+            //context.SaveChanges();
 
 
-            c1.Providers.Add(p1);
-            c2.Providers.Add(p2);
-            c3.Providers.Add(p3);
-            c4.Providers.Add(p4);
+
+            //c1.Providers.Add(p1);
+            //c2.Providers.Add(p2);
+            //c3.Providers.Add(p3);
+            //c4.Providers.Add(p4);
+
+           
+
+            calendar.Appointments.Add(a1);
+            calendar.Appointments.Add(a2);
+            calendar.Appointments.Add(a3);
+            calendar.Appointments.Add(a4);
+
+            context.Calendars.Add(calendar);
+            context.SaveChanges();
 
 
 
-            
+
+
+
 
 
             base.Seed(context);

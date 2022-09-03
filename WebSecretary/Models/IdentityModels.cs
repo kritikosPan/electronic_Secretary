@@ -31,6 +31,5 @@ namespace WebSecretary.Models
         }
 
         object placeHolderVariable;
-        object placeHolderVariable;
     }
 }
