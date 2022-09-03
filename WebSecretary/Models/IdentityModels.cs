@@ -29,5 +29,8 @@ namespace WebSecretary.Models
         {
             return new ApplicationDbContext();
         }
+
+        object placeHolderVariable;
+        object placeHolderVariable;
     }
 }

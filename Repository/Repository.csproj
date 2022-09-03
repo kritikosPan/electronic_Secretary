@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\IGenericRepository.cs" />
+    <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IAppointmentRepository.cs" />
     <Compile Include="Core\Repositories\ICalendarRepository.cs" />
     <Compile Include="Core\Repositories\IServiceCategoryRepository.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Persistance\Repositories\ServiceCategoryRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceProviderRepository.cs" />
     <Compile Include="Persistance\Repositories\UserRepository.cs" />
+    <Compile Include="Persistance\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
