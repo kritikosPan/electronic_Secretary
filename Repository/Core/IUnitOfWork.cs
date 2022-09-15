@@ -10,7 +10,6 @@ namespace Repository.Core
     internal interface IUnitOfWork:IDisposable
     {
         IAppointmentRepository Appointments { get; }
-        ICalendarRepository Calendar { get; }
         IServiceCategoryRepository ServiceCategories { get; }
         IServiceProviderRepository ServiceProviders { get; }
         IUserRepository Users { get; }

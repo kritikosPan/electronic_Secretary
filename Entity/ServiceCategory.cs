@@ -8,10 +8,10 @@ namespace Entity
 {
     public class ServiceCategory:SecretaryEntity
     {
-        public int Id { get; set; }
+        public int ServiceCategoryId { get; set; }
         public string Category { get; set; }
 
         //Navigation Properties
-        public List<ServiceProvider> Providers { get; set; }
+        public virtual ICollection<ServiceProvider> Providers { get; set; }
     }
 }

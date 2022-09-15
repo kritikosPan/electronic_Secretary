@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using Entity;
 using MyDatabase;
@@ -14,6 +15,7 @@ using Repository.Persistance;
 
 namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
 {
+    [EnableCors("*", "*", "GET,POST,PUT,DELETE")]
     public class ProviderController : ApiController
     {
         MyDatabase.ApplicationDbContext db = new MyDatabase.ApplicationDbContext();
@@ -52,7 +54,7 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
                 return BadRequest(ModelState);
             }
 
-            if (id != serviceProvider.Id)
+            if (id != serviceProvider.ServiceProviderId)
             {
                 return BadRequest();
             }
@@ -90,7 +92,7 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
             unit.ServiceProviders.Create(serviceProvider);
             unit.Complete();
 
-            return CreatedAtRoute("DefaultApi", new { id = serviceProvider.Id }, serviceProvider);
+            return CreatedAtRoute("DefaultApi", new { id = serviceProvider.ServiceProviderId }, serviceProvider);
         }
 
         // DELETE: api/Provider/5
@@ -120,7 +122,7 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
 
         private bool ServiceProviderExists(int id)
         {
-            return unit.ServiceProviders.GetAll().Count(e => e.Id == id) > 0;
+            return unit.ServiceProviders.GetAll().Count(e => e.ServiceProviderId == id) > 0;
         }
     }
 }

@@ -10,11 +10,14 @@ namespace Entity
     {
         public int Id { get; set; }
         public string Subject { get; set; }
-        public DateTime DateofAppointment { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         //Navigation Properties
+        //public Calendar calendar { get; set; }
 
-        public User User { get; set; }
+        public virtual User User { get; set; }
+        public virtual ServiceProvider Provider { get; set; }
 
     }
 }

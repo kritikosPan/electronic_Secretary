@@ -54,13 +54,11 @@
     <Compile Include="Core\IGenericRepository.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IAppointmentRepository.cs" />
-    <Compile Include="Core\Repositories\ICalendarRepository.cs" />
     <Compile Include="Core\Repositories\IServiceCategoryRepository.cs" />
     <Compile Include="Core\Repositories\IServiceProviderRepository.cs" />
     <Compile Include="Core\Repositories\IUserRepository.cs" />
     <Compile Include="Persistance\GenericRepository.cs" />
     <Compile Include="Persistance\Repositories\AppointmentRepository.cs" />
-    <Compile Include="Persistance\Repositories\CalendarRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceCategoryRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceProviderRepository.cs" />
     <Compile Include="Persistance\Repositories\UserRepository.cs" />

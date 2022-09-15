@@ -19,7 +19,6 @@ namespace MyDatabase
         public DbSet<User> Users { get; set; }
         public DbSet<ServiceProvider> Providers { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
-        public DbSet<Calendar> Calendars { get; set; }
         public DbSet<ServiceCategory> Categories { get; set; }
     }
 }
