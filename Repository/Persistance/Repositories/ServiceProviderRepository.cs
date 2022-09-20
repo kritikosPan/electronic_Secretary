@@ -27,5 +27,14 @@ namespace Repository.Persistance.Repositories
                          select list;
             return groups;
         }
+        public IEnumerable<ServiceProvider> GetProviders()
+        {
+            return table.Where(x => x.Category != null);
+        }
+
+        public IEnumerable<ServiceProvider> GetProv()
+        {
+            return table.Include("Category");
+        }
     }
 }

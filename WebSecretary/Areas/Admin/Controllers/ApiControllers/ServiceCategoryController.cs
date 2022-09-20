@@ -16,50 +16,50 @@ using Repository.Persistance;
 namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
 {
     [EnableCors("*", "*", "GET,POST,PUT,DELETE")]
-    public class AppointmentController : ApiController
+    public class ServiceCategoryController : ApiController
     {
         MyDatabase.ApplicationDbContext db = new MyDatabase.ApplicationDbContext();
         UnitOfWork unit;
 
-        public AppointmentController()
+        public ServiceCategoryController()
         {
             unit = new UnitOfWork(db);
         }
 
-        // GET: api/Appointment
-        public IEnumerable<Appointment> GetAppointments()
+        // GET: api/ServiceCategory
+        public IEnumerable<ServiceCategory> GetCategories()
         {
-            return unit.Appointments.GetAppo();
+            return unit.ServiceCategories.GetCateg();
         }
 
-        // GET: api/Appointment/5
-        [ResponseType(typeof(Appointment))]
-        public IHttpActionResult GetAppointment(int id)
+        // GET: api/ServiceCategory/5
+        [ResponseType(typeof(ServiceCategory))]
+        public IHttpActionResult GetServiceCategory(int id)
         {
-            Appointment appointment = unit.Appointments.GetById(id);
-            if (appointment == null)
+            ServiceCategory serviceCategory = unit.ServiceCategories.GetById(id);
+            if (serviceCategory == null)
             {
                 return NotFound();
             }
 
-            return Ok(appointment);
+            return Ok(serviceCategory);
         }
 
-        // PUT: api/Appointment/5
+        // PUT: api/ServiceCategory/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutAppointment(int id, Appointment appointment)
+        public IHttpActionResult PutServiceCategory(int id, ServiceCategory serviceCategory)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != appointment.Id)
+            if (id != serviceCategory.ServiceCategoryId)
             {
                 return BadRequest();
             }
-            unit.Appointments.Update(appointment);
-            //.Entry(appointment).State = EntityState.Modified;
+
+            unit.ServiceCategories.Update(serviceCategory);
 
             try
             {
@@ -67,7 +67,7 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AppointmentExists(id))
+                if (!ServiceCategoryExists(id))
                 {
                     return NotFound();
                 }
@@ -80,35 +80,35 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Appointment
-        [ResponseType(typeof(Appointment))]
-        public IHttpActionResult PostAppointment(Appointment appointment)
+        // POST: api/ServiceCategory
+        [ResponseType(typeof(ServiceCategory))]
+        public IHttpActionResult PostServiceCategory(ServiceCategory serviceCategory)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            unit.Appointments.Create(appointment);
+            unit.ServiceCategories.Create(serviceCategory);
             unit.Complete();
 
-            return CreatedAtRoute("DefaultApi", new { id = appointment.Id }, appointment);
+            return CreatedAtRoute("DefaultApi", new { id = serviceCategory.ServiceCategoryId }, serviceCategory);
         }
 
-        // DELETE: api/Appointment/5
-        [ResponseType(typeof(Appointment))]
-        public IHttpActionResult DeleteAppointment(int id)
+        // DELETE: api/ServiceCategory/5
+        [ResponseType(typeof(ServiceCategory))]
+        public IHttpActionResult DeleteServiceCategory(int id)
         {
-            Appointment appointment = unit.Appointments.GetById(id);
-            if (appointment == null)
+            ServiceCategory serviceCategory = unit.ServiceCategories.GetById(id);
+            if (serviceCategory == null)
             {
                 return NotFound();
             }
 
-            unit.Appointments.Delete(id);
+            unit.ServiceCategories.Delete(id);
             unit.Complete();
 
-            return Ok(appointment);
+            return Ok(serviceCategory);
         }
 
         protected override void Dispose(bool disposing)
@@ -120,9 +120,9 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
             base.Dispose(disposing);
         }
 
-        private bool AppointmentExists(int id)
+        private bool ServiceCategoryExists(int id)
         {
-            return unit.Appointments.GetAll().Count(e => e.Id == id) > 0;
+            return unit.ServiceCategories.GetAll().Count(e => e.ServiceCategoryId == id) > 0;
         }
     }
 }

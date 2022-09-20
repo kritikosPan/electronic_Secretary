@@ -11,5 +11,6 @@ namespace Repository.Core.Repositories
     {
         IQueryable<IGrouping<ServiceCategory, ServiceProvider>> GetProvidersGroupedByCategory();
         IEnumerable<ServiceProvider> GetTopRatedProvidersByCategory(string category,int rating);
+        IEnumerable<ServiceProvider> GetProv();
     }
 }

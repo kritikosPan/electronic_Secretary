@@ -17,6 +17,7 @@ namespace Entity
         public string Email { get; set; }
         public string Password { get; set; }
         public double Rating { get; set; }
+        public string MyProperty { get; set; }
 
         //Navigation Properties
         //public ServiceCategory Category { get; set; }

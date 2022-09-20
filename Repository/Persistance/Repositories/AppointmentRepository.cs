@@ -14,5 +14,10 @@ namespace Repository.Persistance.Repositories
         public AppointmentRepository(ApplicationDbContext context) : base(context)
         {
         }
+
+        public IEnumerable<Appointment> GetAppo()
+        {
+            return table.Include("User").Include("Provider");
+        }
     }
 }

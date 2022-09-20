@@ -9,6 +9,6 @@ namespace Repository.Core.Repositories
 {
     public interface IAppointmentRepository: IGenericRepository<Appointment>
     {
-
+        IEnumerable<Appointment> GetAppo();
     }
 }

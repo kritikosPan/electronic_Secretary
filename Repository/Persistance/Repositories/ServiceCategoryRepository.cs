@@ -14,5 +14,10 @@ namespace Repository.Persistance.Repositories
         public ServiceCategoryRepository(ApplicationDbContext context) : base(context)
         {
         }
+
+        public IEnumerable<ServiceCategory> GetCateg()
+        {
+            return table.Include("Providers");
+        }
     }
 }

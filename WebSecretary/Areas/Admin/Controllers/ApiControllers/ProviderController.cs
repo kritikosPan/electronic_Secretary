@@ -29,7 +29,7 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
         // GET: api/Provider
         public IEnumerable<ServiceProvider> GetProviders()
         {
-            return unit.ServiceProviders.GetAll();
+            return unit.ServiceProviders.GetProv();
         }
 
         // GET: api/Provider/5

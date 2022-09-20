@@ -42,7 +42,6 @@ namespace MyDatabase.Initializers
             context.Appointments.AddOrUpdate(a1, a2, a3, a4);
             context.SaveChanges();
 
-
             ServiceCategory c1 = new ServiceCategory() { Category = "Doctor" };
             ServiceCategory c2 = new ServiceCategory() { Category = "Bank" };
             ServiceCategory c3 = new ServiceCategory() { Category = "Public Sector" };
@@ -52,10 +51,11 @@ namespace MyDatabase.Initializers
             context.Categories.AddOrUpdate(c1, c2, c3, c4);
             context.SaveChanges();
 
-            ServiceProvider p1 = new ServiceProvider() { Name = "Tripodakis", Email = "tripo@gmail.com", Password = "admin1234!", Category = c1 };
+
+            ServiceProvider p1 = new ServiceProvider() { Name = "Tripodakis", Email = "tripo@gmail.com", Password = "admin1234!", Category=c1 };
             ServiceProvider p2 = new ServiceProvider() { Name = "Eurobank", Email = "eurobank@gmail.com", Password = "admin1234!", Category = c2 };
-            ServiceProvider p3 = new ServiceProvider() { Name = "DOY", Email = "doy@gmail.com", Password = "admin1234!", Category = c3 };
-            ServiceProvider p4 = new ServiceProvider() { Name = "Hair & Nails", Email = "hairnails@gmail.com", Password = "admin1234!", Category = c4 };
+            ServiceProvider p3 = new ServiceProvider() { Name = "DOY", Email = "doy@gmail.com", Password = "admin1234!", Category = c3};
+            ServiceProvider p4 = new ServiceProvider() { Name = "Hair & Nails", Email = "hairnails@gmail.com", Password = "admin1234!", Category = c4};
 
             context.Providers.AddOrUpdate(p1, p2, p3, p4);
             context.SaveChanges();
