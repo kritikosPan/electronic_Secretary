@@ -10,6 +10,7 @@ namespace Entity
     {
         public int ServiceCategoryId { get; set; }
         public string Category { get; set; }
+        public string ImgUrl { get; set; }
 
         //Navigation Properties
         public virtual ICollection<ServiceProvider> Providers { get; set; }

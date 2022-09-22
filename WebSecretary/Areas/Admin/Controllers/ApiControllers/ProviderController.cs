@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.Remoting.Contexts;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using System.Web.ModelBinding;
 using Entity;
 using MyDatabase;
 using Repository.Persistance;
@@ -29,8 +32,13 @@ namespace WebSecretary.Areas.Admin.Controllers.ApiControllers
         // GET: api/Provider
         public IEnumerable<ServiceProvider> GetProviders()
         {
-            return unit.ServiceProviders.GetProv();
+            return unit.ServiceProviders.GetAll();
         }
+
+       // public IQueryable<IGrouping<ServiceCategory, ServiceProvider>> GetProvByCat()
+       // {
+        //    return unit.ServiceProviders.GetProvidersGroupedByCategory();
+        //}
 
         // GET: api/Provider/5
         [ResponseType(typeof(ServiceProvider))]

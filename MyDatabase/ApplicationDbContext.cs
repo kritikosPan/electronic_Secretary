@@ -15,8 +15,8 @@ namespace MyDatabase
         {
             Database.SetInitializer<ApplicationDbContext>(new MockupDbInitializer());
             Database.Initialize(false);
-            this.Configuration.LazyLoadingEnabled = false;
-            this.Configuration.ProxyCreationEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
+            this.Configuration.ProxyCreationEnabled = true;
         }
         public DbSet<User> Users { get; set; }
         public DbSet<ServiceProvider> Providers { get; set; }

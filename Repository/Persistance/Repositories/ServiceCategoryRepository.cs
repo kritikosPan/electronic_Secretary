@@ -19,5 +19,22 @@ namespace Repository.Persistance.Repositories
         {
             return table.Include("Providers");
         }
+
+        //public IQueryable<ServiceCategory> GetProvidersByCategory(int id)
+        //{
+        //    var groups = from ServiceCategory in table
+        //                 group ServiceCategory.Providers by ServiceCategory.Category into list
+        //                 select list;
+        //    return (IQueryable<ServiceCategory>)groups;
+        //}
+
+        //public IQueryable<IGrouping<ServiceCategory, ServiceProvider>> GetProvidersGroupedByCategory(int id)
+        //{
+        //    var groups = from ServiceCategory in table
+        //                 group ServiceCategory.Providers by ServiceCategory.Category into list
+        //                 select list;
+        //    return (IQueryable<IGrouping<ServiceCategory, ServiceProvider>>)groups;
+        //}
+
     }
 }

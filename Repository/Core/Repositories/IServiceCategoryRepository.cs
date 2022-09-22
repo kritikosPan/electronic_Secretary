@@ -10,5 +10,6 @@ namespace Repository.Core.Repositories
     public interface IServiceCategoryRepository : IGenericRepository<ServiceCategory>
     {
         IEnumerable<ServiceCategory> GetCateg();
+        //IQueryable<ServiceCategory> GetProvidersByCategory(int id);
     }
 }
